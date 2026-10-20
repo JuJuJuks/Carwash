@@ -1,0 +1,1319 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lavado a Domicilio | Carwash Premium en Marchigüe</title>
+    
+    <!-- SEO -->
+    <meta name="description" content="Servicio de carwash a domicilio en Marchigüe. Lavado premium, ecológico y profesional. ¡Agenda tu hora por WhatsApp!" />
+    <meta name="keywords" content="carwash, lavado a domicilio, lavado de autos, Marchigüe, carwash premium" />
+    
+    <!-- Fuentes e Iconos -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    
+    <style>
+      /* ===== VARIABLES ===== */
+      :root {
+        --azul-profundo: #0a1929;
+        --azul-medio: #1e3a5f;
+        --azul-claro: #3b82f6;
+        --celeste: #38bdf8;
+        --cian: #22d3ee;
+        --blanco: #ffffff;
+        --gris-claro: #f1f5f9;
+        --gris: #64748b;
+        --texto: #1e293b;
+        --dorado: #fbbf24;
+        --verde-wa: #25d366;
+        --sombra: 0 10px 40px rgba(0, 0, 0, 0.1);
+        --border-radius: 20px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      }
+
+      body {
+        background: var(--blanco);
+        color: var(--texto);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ===== NAVBAR ===== */
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(10, 25, 41, 0.95);
+        backdrop-filter: blur(15px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        transition: all 0.4s ease;
+        padding: 1rem 0;
+      }
+
+      .navbar.scrolled {
+        background: rgba(10, 25, 41, 0.98);
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+        padding: 0.6rem 0;
+      }
+
+      .nav-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+
+      .nav-logo {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        text-decoration: none;
+        color: white;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+
+      .nav-logo i {
+        color: var(--celeste);
+        font-size: 1.5rem;
+      }
+
+      .nav-logo span {
+        color: var(--celeste);
+      }
+
+      .nav-toggle {
+        display: none;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: white;
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        cursor: pointer;
+        font-size: 1.4rem;
+        transition: all 0.3s ease;
+      }
+
+      .nav-toggle:hover {
+        background: rgba(255, 255, 255, 0.15);
+      }
+
+      .nav-menu {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        list-style: none;
+      }
+
+      .nav-menu a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        padding: 0.6rem 1rem;
+        border-radius: 10px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+      }
+
+      .nav-menu a:hover {
+        color: white;
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .nav-menu a i {
+        color: var(--celeste);
+      }
+
+      .nav-cta {
+        background: linear-gradient(135deg, var(--celeste), var(--cian)) !important;
+        color: var(--azul-profundo) !important;
+        font-weight: 700 !important;
+        padding: 0.6rem 1.4rem !important;
+        border-radius: 50px !important;
+        box-shadow: 0 4px 15px rgba(56, 189, 248, 0.3);
+      }
+
+      .nav-cta:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 25px rgba(56, 189, 248, 0.4);
+      }
+
+      /* ===== HERO ===== */
+      .hero {
+        min-height: 100vh;
+        background: linear-gradient(135deg, var(--azul-profundo) 0%, #0f2847 50%, #1a3a5c 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 8rem 1.5rem 4rem;
+        position: relative;
+        overflow: hidden;
+        color: white;
+        text-align: center;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at 30% 40%, rgba(56, 189, 248, 0.15) 0%, transparent 60%);
+        animation: rotateBg 30s linear infinite;
+      }
+
+      @keyframes rotateBg {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+
+      .hero::after {
+        content: '🚗';
+        position: absolute;
+        font-size: 20rem;
+        opacity: 0.03;
+        bottom: -3rem;
+        right: -3rem;
+        transform: rotate(-10deg);
+      }
+
+      .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+      }
+
+      .hero-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(56, 189, 248, 0.15);
+        border: 1px solid rgba(56, 189, 248, 0.3);
+        color: var(--celeste);
+        padding: 0.5rem 1.5rem;
+        border-radius: 50px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1.5rem;
+        animation: pulseBadge 2s ease-in-out infinite;
+      }
+
+      @keyframes pulseBadge {
+        0%, 100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.3); }
+        50% { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 900;
+        line-height: 1.1;
+        margin-bottom: 1.2rem;
+        letter-spacing: -1.5px;
+      }
+
+      .hero h1 span {
+        background: linear-gradient(135deg, var(--celeste), var(--cian));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.8);
+        max-width: 600px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.7;
+      }
+
+      .hero-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn-primary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: linear-gradient(135deg, var(--celeste), var(--cian));
+        color: var(--azul-profundo);
+        padding: 1rem 2.2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 1.05rem;
+        transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        box-shadow: 0 6px 25px rgba(56, 189, 248, 0.4);
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px) scale(1.02);
+        box-shadow: 0 10px 35px rgba(56, 189, 248, 0.5);
+      }
+
+      .btn-secondary {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.6rem;
+        background: rgba(255, 255, 255, 0.08);
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 1rem 2.2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.05rem;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(10px);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.15);
+        transform: translateY(-3px);
+      }
+
+      .hero-stats {
+        display: flex;
+        justify-content: center;
+        gap: 3rem;
+        margin-top: 4rem;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-stat {
+        text-align: center;
+      }
+
+      .hero-stat .number {
+        font-size: 2.5rem;
+        font-weight: 800;
+        background: linear-gradient(135deg, var(--celeste), var(--cian));
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero-stat .label {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.6);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+      }
+
+      /* ===== SECCIONES ===== */
+      .section {
+        padding: 5rem 1.5rem;
+      }
+
+      .section-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 3.5rem;
+      }
+
+      .section-header .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: rgba(56, 189, 248, 0.1);
+        color: var(--azul-claro);
+        padding: 0.4rem 1.2rem;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 1rem;
+      }
+
+      .section-header h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: var(--texto);
+        margin-bottom: 0.8rem;
+        letter-spacing: -0.5px;
+      }
+
+      .section-header p {
+        color: var(--gris);
+        font-size: 1.1rem;
+        max-width: 600px;
+        margin: 0 auto;
+      }
+
+      /* ===== SERVICIOS ===== */
+      .servicios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .servicio-card {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 2.5rem 2rem;
+        box-shadow: var(--sombra);
+        border: 2px solid transparent;
+        transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .servicio-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, var(--celeste), var(--cian));
+        transform: scaleX(0);
+        transition: transform 0.4s ease;
+      }
+
+      .servicio-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
+        border-color: var(--celeste);
+      }
+
+      .servicio-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .servicio-icon {
+        width: 70px;
+        height: 70px;
+        border-radius: 20px;
+        background: linear-gradient(135deg, rgba(56, 189, 248, 0.1), rgba(34, 211, 238, 0.1));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: var(--celeste);
+        margin-bottom: 1.5rem;
+        transition: all 0.4s ease;
+      }
+
+      .servicio-card:hover .servicio-icon {
+        background: linear-gradient(135deg, var(--celeste), var(--cian));
+        color: white;
+        transform: scale(1.1) rotate(-5deg);
+      }
+
+      .servicio-card h3 {
+        font-size: 1.3rem;
+        font-weight: 700;
+        margin-bottom: 0.6rem;
+        color: var(--texto);
+      }
+
+      .servicio-card p {
+        color: var(--gris);
+        font-size: 0.95rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.7;
+      }
+
+      .servicio-card .precio {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: var(--azul-claro);
+        margin-bottom: 1.2rem;
+      }
+
+      .servicio-card .precio small {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--gris);
+      }
+
+      .servicio-card ul {
+        list-style: none;
+        margin-bottom: 1.5rem;
+      }
+
+      .servicio-card ul li {
+        display: flex;
+        align-items: center;
+        gap: 0.6rem;
+        padding: 0.3rem 0;
+        font-size: 0.9rem;
+        color: var(--texto);
+      }
+
+      .servicio-card ul li i {
+        color: var(--verde-wa);
+        font-size: 0.85rem;
+      }
+
+      .btn-servicio {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        width: 100%;
+        background: linear-gradient(135deg, var(--azul-claro), var(--celeste));
+        color: white;
+        padding: 0.9rem;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 700;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3);
+      }
+
+      .btn-servicio:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 25px rgba(59, 130, 246, 0.4);
+      }
+
+      /* ===== BENEFICIOS ===== */
+      .beneficios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .beneficio-card {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        border-radius: var(--border-radius);
+        background: var(--gris-claro);
+        transition: all 0.3s ease;
+      }
+
+      .beneficio-card:hover {
+        background: white;
+        box-shadow: var(--sombra);
+        transform: translateY(-5px);
+      }
+
+      .beneficio-card i {
+        font-size: 2.5rem;
+        color: var(--celeste);
+        margin-bottom: 1rem;
+      }
+
+      .beneficio-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--texto);
+      }
+
+      .beneficio-card p {
+        font-size: 0.9rem;
+        color: var(--gris);
+      }
+
+      /* ===== CÓMO FUNCIONA ===== */
+      .pasos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 2rem;
+        margin-top: 2rem;
+      }
+
+      .paso-card {
+        text-align: center;
+        padding: 2rem 1.5rem;
+        position: relative;
+      }
+
+      .paso-numero {
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--celeste), var(--cian));
+        color: var(--azul-profundo);
+        font-size: 1.5rem;
+        font-weight: 800;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 1rem;
+        box-shadow: 0 6px 20px rgba(56, 189, 248, 0.3);
+      }
+
+      .paso-card h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        color: var(--texto);
+      }
+
+      .paso-card p {
+        font-size: 0.9rem;
+        color: var(--gris);
+      }
+
+      /* ===== TESTIMONIOS ===== */
+      .testimonios-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+      }
+
+      .testimonio-card {
+        background: white;
+        border-radius: var(--border-radius);
+        padding: 2rem;
+        box-shadow: var(--sombra);
+        transition: all 0.3s ease;
+      }
+
+      .testimonio-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .testimonio-estrellas {
+        color: var(--dorado);
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .testimonio-texto {
+        font-size: 0.95rem;
+        color: var(--texto);
+        margin-bottom: 1.5rem;
+        line-height: 1.7;
+        font-style: italic;
+      }
+
+      .testimonio-autor {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .testimonio-avatar {
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--celeste), var(--cian));
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-weight: 700;
+        font-size: 1.1rem;
+      }
+
+      .testimonio-autor .nombre {
+        font-weight: 700;
+        font-size: 0.9rem;
+        color: var(--texto);
+      }
+
+      .testimonio-autor .cargo {
+        font-size: 0.8rem;
+        color: var(--gris);
+      }
+
+      /* ===== CTA FINAL ===== */
+      .cta-final {
+        background: linear-gradient(135deg, var(--azul-profundo) 0%, #0f2847 100%);
+        padding: 5rem 1.5rem;
+        text-align: center;
+        color: white;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .cta-final::before {
+        content: '✨';
+        position: absolute;
+        font-size: 15rem;
+        opacity: 0.03;
+        top: -2rem;
+        left: -2rem;
+      }
+
+      .cta-final::after {
+        content: '🚿';
+        position: absolute;
+        font-size: 12rem;
+        opacity: 0.03;
+        bottom: -2rem;
+        right: -2rem;
+      }
+
+      .cta-final-content {
+        max-width: 700px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+      }
+
+      .cta-final h2 {
+        font-size: 2.5rem;
+        font-weight: 800;
+        margin-bottom: 1rem;
+      }
+
+      .cta-final p {
+        font-size: 1.15rem;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+      }
+
+      .cta-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      /* ===== FOOTER ===== */
+      .footer {
+        background: var(--azul-profundo);
+        color: #94a3b8;
+        padding: 3rem 1.5rem 2rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+      }
+
+      .footer-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer h3 {
+        color: white;
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .footer h3 i {
+        color: var(--celeste);
+      }
+
+      .footer p {
+        font-size: 0.9rem;
+        line-height: 1.7;
+      }
+
+      .footer ul {
+        list-style: none;
+      }
+
+      .footer ul li {
+        padding: 0.3rem 0;
+        font-size: 0.9rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      .footer ul li i {
+        color: var(--celeste);
+        font-size: 0.8rem;
+      }
+
+      .footer-social {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .footer-social a {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.06);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #94a3b8;
+        font-size: 1.1rem;
+        transition: all 0.3s ease;
+      }
+
+      .footer-social a:hover {
+        background: var(--celeste);
+        color: var(--azul-profundo);
+        transform: translateY(-3px);
+      }
+
+      .footer-bottom {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding-top: 1.5rem;
+        border-top: 1px solid rgba(255, 255, 255, 0.06);
+        font-size: 0.85rem;
+      }
+
+      /* ===== BOTÓN WHATSAPP FLOTANTE ===== */
+      .whatsapp-float {
+        position: fixed;
+        bottom: 2rem;
+        right: 2rem;
+        width: 60px;
+        height: 60px;
+        background: var(--verde-wa);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: white;
+        font-size: 1.8rem;
+        box-shadow: 0 6px 25px rgba(37, 211, 102, 0.4);
+        z-index: 999;
+        transition: all 0.3s ease;
+        animation: floatWa 3s ease-in-out infinite;
+      }
+
+      .whatsapp-float:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 35px rgba(37, 211, 102, 0.6);
+      }
+
+      @keyframes floatWa {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-8px); }
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .nav-toggle {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .nav-menu {
+          position: fixed;
+          top: 0;
+          right: -100%;
+          width: 280px;
+          height: 100vh;
+          background: var(--azul-profundo);
+          flex-direction: column;
+          padding: 5rem 1.5rem 2rem;
+          transition: right 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+          gap: 0.3rem;
+          box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .nav-menu.active {
+          right: 0;
+        }
+
+        .nav-menu a {
+          width: 100%;
+          padding: 0.8rem 1rem;
+        }
+
+        .hero h1 {
+          font-size: 2.2rem;
+        }
+
+        .hero p {
+          font-size: 1rem;
+        }
+
+        .hero-stats {
+          gap: 1.5rem;
+        }
+
+        .hero-stat .number {
+          font-size: 2rem;
+        }
+
+        .section-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .section {
+          padding: 3rem 1rem;
+        }
+
+        .cta-final h2 {
+          font-size: 1.8rem;
+        }
+
+        .whatsapp-float {
+          width: 55px;
+          height: 55px;
+          font-size: 1.6rem;
+          bottom: 1.5rem;
+          right: 1.5rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .hero {
+          padding: 6rem 1rem 3rem;
+        }
+
+        .hero h1 {
+          font-size: 1.8rem;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-primary, .btn-secondary {
+          width: 100%;
+          justify-content: center;
+        }
+
+        .hero-stats {
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .section-header h2 {
+          font-size: 1.5rem;
+        }
+
+        .servicio-card {
+          padding: 2rem 1.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ===== NAVBAR ===== -->
+    <nav class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="#" class="nav-logo">
+          <i class="fas fa-car-wash"></i>
+          <span>Carwash</span>Premium
+        </a>
+
+        <button class="nav-toggle" id="navToggle" aria-label="Abrir menú">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <ul class="nav-menu" id="navMenu">
+          <li><a href="#servicios"><i class="fas fa-spray-can"></i> Servicios</a></li>
+          <li><a href="#beneficios"><i class="fas fa-star"></i> Beneficios</a></li>
+          <li><a href="#como-funciona"><i class="fas fa-list-ol"></i> Cómo Funciona</a></li>
+          <li><a href="#testimonios"><i class="fas fa-comments"></i> Testimonios</a></li>
+          <li><a href="https://wa.me/56922289073?text=Hola,%20quiero%20agendar%20un%20lavado%20a%20domicilio" target="_blank" class="nav-cta"><i class="fab fa-whatsapp"></i> Agendar</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- ===== HERO ===== -->
+    <header class="hero">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="fas fa-bolt"></i> Servicio a Domicilio
+        </div>
+        <h1>Tu auto limpio<br /><span>sin moverte de casa</span></h1>
+        <p>
+          Lavado premium a domicilio en Melipilla y alrededores. 
+          Usamos productos ecológicos, agua medida y cuidamos cada detalle de tu vehículo.
+        </p>
+        <div class="hero-buttons">
+          <a href="https://wa.me/56922289073?text=Hola,%20quiero%20agendar%20un%20lavado%20a%20domicilio" target="_blank" class="btn-primary">
+            <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-secondary">
+            <i class="fas fa-arrow-down"></i> Ver Servicios
+          </a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <div class="number">500+</div>
+            <div class="label">Autos Lavados</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">4.9★</div>
+            <div class="label">Calificación</div>
+          </div>
+          <div class="hero-stat">
+            <div class="number">100%</div>
+            <div class="label">Ecológico</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ===== SERVICIOS ===== -->
+    <section class="section" id="servicios">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="tag"><i class="fas fa-spray-can"></i> Nuestros Servicios</div>
+          <h2>Planes a tu medida</h2>
+          <p>Elige el servicio que mejor se adapte a las necesidades de tu vehículo</p>
+        </div>
+
+        <div class="servicios-grid">
+          <!-- Servicio 1 -->
+          <div class="servicio-card">
+            <div class="servicio-icon">
+              <i class="fas fa-car"></i>
+            </div>
+            <h3>Lavado Básico</h3>
+            <p>Lavado exterior completo con productos de alta calidad.</p>
+            <div class="precio">$12.000 <small> Sedan/Hatchback</small></div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Lavado exterior</li>
+              <li><i class="fas fa-check-circle"></i> Devuelve el brillo</li>
+              <li><i class="fas fa-check-circle"></i> Limpieza de vidrios</li>
+              <li><i class="fas fa-check-circle"></i> Ruedas renovadas</li>
+            </ul>
+            <a href="https://wa.me/56922289073?text=Hola,%20quiero%20el%20Lavado%20Básico%20a%20domicilio" target="_blank" class="btn-servicio">
+              <i class="fab fa-whatsapp"></i> Agendar Básico
+            </a>
+          </div>
+
+          <!-- Servicio 2 -->
+          <div class="servicio-card" style="border-color: var(--celeste); border-width: 2px; position: relative;">
+            <div style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, var(--celeste), var(--cian)); color: var(--azul-profundo); padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Más Popular</div>
+            <div class="servicio-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Lavado Premium</h3>
+            <p>Lavado exterior e interior completo con aspirado.</p>
+            <div class="precio"> $25.000 <small> Sedan/Hatchback</small></div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Todo lo del Básico</li>
+              <li><i class="fas fa-check-circle"></i> Aspirado interior</li>
+              <li><i class="fas fa-check-circle"></i> Limpieza de consola</li>
+              <li><i class="fas fa-check-circle"></i> Aplicacion de APC</li>
+            </ul>
+            <a href="https://wa.me/56922289073?text=Hola,%20quiero%20el%20Lavado%20Premium%20a%20domicilio" target="_blank" class="btn-servicio">
+              <i class="fab fa-whatsapp"></i> Agendar Premium
+            </a>
+          </div>
+
+<!-- Servicio 3 -->
+          <div class="servicio-card" style="border-color: var(--celeste); border-width: 2px; position: relative;">
+            <div style="position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, var(--celeste), var(--cian)); color: var(--azul-profundo); padding: 0.3rem 1rem; border-radius: 50px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Más Popular</div>
+            <div class="servicio-icon">
+              <i class="fas fa-star"></i>
+            </div>
+            <h3>Lavado Tapicería</h3>
+            <p>Lavado de interior completo detallado.</p>
+            <div class="precio"> $35.000 <small> Sedan/Hatchback</small></div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Quita Manchas</li>
+              <li><i class="fas fa-check-circle"></i> Fuera Mal Olor</li>
+              <li><i class="fas fa-check-circle"></i> Limpieza de Asientos</li>
+              <li><i class="fas fa-check-circle"></i> Sanitizado</li>
+            </ul>
+            <a href="https://wa.me/56922289073?text=Hola,%20quiero%20el%20Lavado%20Premium%20a%20domicilio" target="_blank" class="btn-servicio">
+              <i class="fab fa-whatsapp"></i> Agendar Tapicería
+            </a>
+          </div>
+
+          <!-- Servicio 4 -->
+          <div class="servicio-card">
+            <div class="servicio-icon">
+              <i class="fas fa-crown"></i>
+            </div>
+            <h3>Lavado Full Detailing</h3>
+            <p>Tratamiento completo al detalle.</p>
+            <div class="precio"> $50.000 <small> Sedan/Hatchback</small></div>
+            <ul>
+              <li><i class="fas fa-check-circle"></i> Todo lo del Premium</li>
+              <li><i class="fas fa-check-circle"></i> Encerado </li>
+              <li><i class="fas fa-check-circle"></i> Detallado interior</li>
+              <li><i class="fas fa-check-circle"></i> Maquinaria profesional</li>
+            </ul>
+            <a href="https://wa.me/56922289073?text=Hola,%20quiero%20el%20Lavado%20Full%20Detailing%20a%20domicilio" target="_blank" class="btn-servicio">
+              <i class="fab fa-whatsapp"></i> Agendar Full
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BENEFICIOS ===== -->
+    <section class="section" id="beneficios" style="background: var(--gris-claro);">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="tag"><i class="fas fa-star"></i> ¿Por qué elegirnos?</div>
+          <h2>Beneficios exclusivos</h2>
+          <p>Más que un lavado, una experiencia premium para tu vehículo</p>
+        </div>
+
+        <div class="beneficios-grid">
+          <div class="beneficio-card">
+            <i class="fas fa-truck"></i>
+            <h3>100% a Domicilio</h3>
+            <p>Vamos a donde estés, sin que tengas que mover tu auto.</p>
+          </div>
+          <div class="beneficio-card">
+            <i class="fas fa-leaf"></i>
+            <h3>Ecológico</h3>
+            <p>Productos biodegradables y uso responsable del agua.</p>
+          </div>
+          <div class="beneficio-card">
+            <i class="fas fa-clock"></i>
+            <h3>Membresia</h3>
+            <p>Lavados periodicos, mantenimientos, acceso a beneficios.</p>
+          </div>
+          <div class="beneficio-card">
+            <i class="fas fa-shield-alt"></i>
+            <h3>Cuidado Profesional</h3>
+            <p>Personal capacitado y productos de primera calidad.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CÓMO FUNCIONA ===== -->
+    <section class="section" id="como-funciona">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="tag"><i class="fas fa-list-ol"></i> Proceso Simple</div>
+          <h2>¿Cómo funciona?</h2>
+          <p>Agendar tu lavado es muy fácil, solo sigue estos pasos</p>
+        </div>
+
+        <div class="pasos-grid">
+          <div class="paso-card">
+            <div class="paso-numero">1</div>
+            <h3>Escríbenos</h3>
+            <p>Contáctanos por WhatsApp y cuéntanos qué servicio necesitas.</p>
+          </div>
+          <div class="paso-card">
+            <div class="paso-numero">2</div>
+            <h3>Agenda</h3>
+            <p>Elige el día y la hora que más te convenga.</p>
+          </div>
+          <div class="paso-card">
+            <div class="paso-numero">3</div>
+            <h3>Nos Movemos</h3>
+            <p>Vamos a tu domicilio con todo el equipo necesario.</p>
+          </div>
+          <div class="paso-card">
+            <div class="paso-numero">4</div>
+            <h3>Disfruta</h3>
+            <p>Tu auto queda como nuevo, sin que muevas un dedo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== TESTIMONIOS ===== -->
+    <section class="section" id="testimonios" style="background: var(--gris-claro);">
+      <div class="section-container">
+        <div class="section-header">
+          <div class="tag"><i class="fas fa-comments"></i> Testimonios</div>
+          <h2>Lo que dicen nuestros clientes</h2>
+          <p>La satisfacción de nuestros clientes es nuestra mejor carta de presentación</p>
+        </div>
+
+        <div class="testimonios-grid">
+          <div class="testimonio-card">
+            <div class="testimonio-estrellas">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonio-texto">
+              "Excelente servicio, llegaron puntuales y dejaron mi auto impecable. Sin duda los volveré a llamar."
+            </p>
+            <div class="testimonio-autor">
+              <div class="testimonio-avatar">M</div>
+              <div>
+                <div class="nombre">María González</div>
+                <div class="cargo">Cliente frecuente</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card">
+            <div class="testimonio-estrellas">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonio-texto">
+              "El servicio Full Detailing superó mis expectativas. Mi auto quedó como recién salido del concesionario."
+            </p>
+            <div class="testimonio-autor">
+              <div class="testimonio-avatar">C</div>
+              <div>
+                <div class="nombre">Carlos Rojas</div>
+                <div class="cargo">Cliente Premium</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="testimonio-card">
+            <div class="testimonio-estrellas">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="testimonio-texto">
+              "Me encanta que usen productos ecológicos. El auto queda limpio y cuidan el medio ambiente."
+            </p>
+            <div class="testimonio-autor">
+              <div class="testimonio-avatar">A</div>
+              <div>
+                <div class="nombre">Ana Silva</div>
+                <div class="cargo">Clienta ecológica</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL ===== -->
+    <section class="cta-final">
+      <div class="cta-final-content">
+        <h2>¿Listo para tener tu auto impecable?</h2>
+        <p>Agenda tu lavado a domicilio ahora y descubre la diferencia de un servicio premium.</p>
+        <div class="cta-buttons">
+          <a href="https://wa.me/56922289073?text=Hola,%20quiero%20agendar%20un%20lavado%20a%20domicilio" target="_blank" class="btn-primary">
+            <i class="fab fa-whatsapp"></i> Agendar por WhatsApp
+          </a>
+          <a href="#servicios" class="btn-secondary">
+            <i class="fas fa-spray-can"></i> Ver Servicios
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+      <div class="footer-content">
+        <div>
+          <h3><i class="fas fa-car-wash"></i> Carwash Premium</h3>
+          <p>
+            Servicio de lavado a domicilio en Melipilla y alrededores. 
+            Calidad, puntualidad y cuidado por tu vehículo.
+          </p>
+          <div class="footer-social">
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+        <div>
+          <h3><i class="fas fa-link"></i> Enlaces</h3>
+          <ul>
+            <li><i class="fas fa-chevron-right"></i> <a href="#servicios" style="color: #94a3b8; text-decoration: none;">Servicios</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="#beneficios" style="color: #94a3b8; text-decoration: none;">Beneficios</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="#como-funciona" style="color: #94a3b8; text-decoration: none;">Cómo Funciona</a></li>
+            <li><i class="fas fa-chevron-right"></i> <a href="#testimonios" style="color: #94a3b8; text-decoration: none;">Testimonios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3><i class="fas fa-phone"></i> Contacto</h3>
+          <ul>
+            <li><i class="fab fa-whatsapp"></i> +56 9 2228 9073</li>
+            <li><i class="fas fa-map-marker-alt"></i> Melipilla, Chile</li>
+            <li><i class="fas fa-clock"></i> Lun - Dom: 7:00 - 20:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Carwash Premium. Todos los derechos reservados.</p>
+      </div>
+    </footer>
+
+    <!-- ===== BOTÓN WHATSAPP FLOTANTE ===== -->
+    <a href="https://wa.me/56922289073?text=Hola,%20quiero%20agendar%20un%20lavado%20a%20domicilio" target="_blank" class="whatsapp-float" aria-label="Contactar por WhatsApp">
+      <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- ===== JAVASCRIPT ===== -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // ===== MENÚ HAMBURGUESA =====
+        const navToggle = document.getElementById('navToggle');
+        const navMenu = document.getElementById('navMenu');
+        const navbar = document.getElementById('navbar');
+
+        navToggle.addEventListener('click', function() {
+          navMenu.classList.toggle('active');
+          const icon = this.querySelector('i');
+          if (navMenu.classList.contains('active')) {
+            icon.className = 'fas fa-times';
+          } else {
+            icon.className = 'fas fa-bars';
+          }
+        });
+
+        // Cerrar menú al hacer click en un enlace
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+          link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            navToggle.querySelector('i').className = 'fas fa-bars';
+          });
+        });
+
+        // Navbar con sombra al hacer scroll
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+          } else {
+            navbar.classList.remove('scrolled');
+          }
+        });
+
+        // ===== SCROLL SUAVE =====
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+          });
+        });
+
+        // ===== ANIMACIÓN AL SCROLL =====
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.style.opacity = '1';
+              entry.target.style.transform = 'translateY(0)';
+            }
+          });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.servicio-card, .beneficio-card, .paso-card, .testimonio-card').forEach(el => {
+          el.style.opacity = '0';
+          el.style.transform = 'translateY(30px)';
+          el.style.transition = 'all 0.6s cubic-bezier(0.34, 1.56, 0.64, 1)';
+          observer.observe(el);
+        });
+
+        console.log('🚗 Carwash Premium - ¡Bienvenido!');
+        console.log('📱 Contacto: wa.me/56922289073');
+      });
+    </script>
+  </body>
+</html>
